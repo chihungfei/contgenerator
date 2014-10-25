@@ -28,7 +28,7 @@ for each in files:
     out = each
     lines = open(each).readlines()
     fp = open(each,'w')  #打开你要写得文件pp2.txt
-    pt = re.compile(r'<.+?>')
+    pt = re.compile(r'(<.+?>)|(^[AB]: )')
     for s in lines:
        fp.write(re.sub(pt, '', s))
     fp.close()  # 关闭文件
